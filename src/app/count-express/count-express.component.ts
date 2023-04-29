@@ -41,5 +41,12 @@ export class CountExpressComponent {
       this.expressNicolas--;
     }
   }
-  
+
+  resetCounter(){
+    this.expressAlessandro=0;
+    this.expressCarmine=0;
+    this.expressDaniele=0;
+    this.expressNicolas=0;
+  }
+
 }
