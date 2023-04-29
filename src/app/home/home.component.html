@@ -6,61 +6,7 @@
     <div class="flex flex-col md:flex-row p-8 w-full">
         <div class="flex flex-col w-full md:w-2/3">
 
-            <div class="flex flex-col text-lg text-center ">
-                <p class="border-b-2 border-white pb-2">Conta corriere:</p>
-                <div class="flex flex-row py-4 pt-6">
-                    <div class="flex flex-row w-2/6"></div>
-                    <div class="flex flex-row w-3/6">
-                        <p>Alessandro:</p>
-                    </div>
-
-                    <div class="flex flex-row justify-center w-full">
-                        <button (click)="counterExpressMinus('expressAlessandro')" class="px-6">-</button>
-                        <p>{{expressAlessandro}}</p>
-                        <button (click)="counterExpressPlus('expressAlessandro')" class="px-6">+</button>
-                    </div>
-
-                </div>
-                <div class="flex flex-row py-4">
-                    <div class="flex flex-row w-2/6"></div>
-                    <div class="flex flex-row justify-start w-3/6">
-                        <p>Carmine:</p>
-                    </div>
-
-                    <div class="flex flex-row justify-center w-full">
-                        <button (click)="counterExpressMinus('expressCarmine')" class="px-6">-</button>
-                        <p>{{expressCarmine}}</p>
-                        <button (click)="counterExpressPlus('expressCarmine')" class="px-6">+</button>
-                    </div>
-
-                </div>
-                <div class="flex flex-row py-4">
-                    <div class="flex flex-row w-2/6"></div>
-                    <div class="flex flex-row justify-start w-3/6">
-                        <p>Daniele:</p>
-                    </div>
-
-                    <div class="flex flex-row justify-center w-full">
-                        <button (click)="counterExpressMinus('expressDaniele')" class="px-6">-</button>
-                        <p>{{expressDaniele}}</p>
-                        <button (click)="counterExpressPlus('expressDaniele')" class="px-6">+</button>
-                    </div>
-
-                </div>
-                <div class="flex flex-row py-4">
-                    <div class="flex flex-row w-2/6"></div>
-                    <div class="flex flex-row justify-start w-3/6">
-                        <p>Nicolas:</p>
-                    </div>
-
-                    <div class="flex flex-row justify-center w-full">
-                        <button (click)="counterExpressMinus('expressNicolas')" class="px-6">-</button>
-                        <p>{{expressNicolas}}</p>
-                        <button (click)="counterExpressPlus('expressNicolas')" class="px-6">+</button>
-                    </div>
-
-                </div>
-            </div>
+            <app-count-express></app-count-express>
 
         </div>
         

@@ -6,12 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutes } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { CountExpressComponent } from './count-express/count-express.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    CountExpressComponent
   ],
   imports: [
     BrowserModule,
