@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-check-people',
@@ -7,26 +6,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./check-people.component.css'],
 })
 export class CheckPeopleComponent implements OnInit {
+  
   ngOnInit() {
-    this.reload();
-
-    this.http.get('http://192.168.1.15:3000/checkStatusNicolas').subscribe(
-      (data) => {
-        console.log(data);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-    
+    this.reload();    
   }
-
+  
   statusAlessandro = 'Loading';
   statusCarmine = 'Loading';
   statusDaniele = 'Loading';
   statusNicolas = 'Loading';
-
-  constructor(private http: HttpClient) {}
 
   reload() {
     console.log('Ricaricato!');
@@ -35,4 +23,5 @@ export class CheckPeopleComponent implements OnInit {
     this.statusDaniele = 'Online';
     this.statusNicolas = 'Online';
   }
+
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { CountExpressService, ICountExpress } from 'src/app/services/count-express.service';
 
 @Component({
   selector: 'app-count-express',
@@ -6,6 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./count-express.component.css']
 })
 export class CountExpressComponent {
+
+  constructor(private http: HttpClient, private countExpressService: CountExpressService){}
+  
+  responseStatusAlessandro: ICountExpress | undefined;
 
   expressAlessandro = 0;
   expressCarmine = 0;
@@ -47,6 +53,13 @@ export class CountExpressComponent {
     this.expressCarmine=0;
     this.expressDaniele=0;
     this.expressNicolas=0;
+  }
+
+  showCountExpressAlessandro() {
+    this.countExpressService.getCountExpressAlessandro()
+      .subscribe((data: ICountExpress) => this.responseStatusAlessandro = {
+          express: data.express,
+      });
   }
 
 }
