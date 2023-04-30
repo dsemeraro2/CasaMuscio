@@ -9,51 +9,15 @@
         <p class="border-b-2 border-white pb-2 w-full"></p>
     </div>
     
-    <div class="flex py-4 pt-6 w-full">
+    <div *ngFor="let item of countExpress; index as i" class="flex py-4 pt-6 w-full">
         <div class="flex w-1/2 pl-6">
-            <p>Alessandro:</p>
+            <p>{{item.person}}:</p>
         </div>
 
         <div class="flex justify-center w-1/2">
-            <button (click)="counterExpressMinus('countExpressAlessandro')" class="px-6">-</button>
-            <p>{{countExpressAlessandro}}</p>
-            <button (click)="counterExpressPlus('countExpressAlessandro')" class="px-6">+</button>
-        </div>
-
-    </div>
-    <div class="flex py-4 w-full">
-        <div class="flex w-1/2 pl-6">
-            <p>Carmine:</p>
-        </div>
-
-        <div class="flex justify-center w-1/2">
-            <button (click)="counterExpressMinus('countExpressCarmine')" class="px-6">-</button>
-            <p>{{countExpressCarmine}}</p>
-            <button (click)="counterExpressPlus('countExpressCarmine')" class="px-6">+</button>
-        </div>
-
-    </div>
-    <div class="flex py-4 w-full">
-        <div class="flex w-1/2 pl-6">
-            <p>Daniele:</p>
-        </div>
-
-        <div class="flex justify-center w-1/2">
-            <button (click)="counterExpressMinus('countExpressDaniele')" class="px-6">-</button>
-            <p>{{countExpressDaniele}}</p>
-            <button (click)="counterExpressPlus('countExpressDaniele')" class="px-6">+</button>
-        </div>
-
-    </div>
-    <div class="flex py-4 w-full">
-        <div class="flex w-1/2 pl-6">
-            <p>Nicolas:</p>
-        </div>
-
-        <div class="flex justify-center w-1/2">
-            <button (click)="counterExpressMinus('countExpressNicolas')" class="px-6">-</button>
-            <p>{{countExpressNicolas}}</p>
-            <button (click)="counterExpressPlus('countExpressNicolas')" class="px-6">+</button>
+            <button (click)="counterExpressMinus(item)" class="px-6">-</button>
+            <p>{{item.value}}</p>
+            <button (click)="counterExpressPlus(item)" class="px-6">+</button>
         </div>
 
     </div>

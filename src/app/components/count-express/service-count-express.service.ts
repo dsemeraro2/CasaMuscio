@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { HttpsCountExpressService, ICountExpress } from 'src/app/services/https-count-express.service';
+import { HttpsCountExpressService, ICountExpressHttps } from 'src/app/services/https-count-express.service';
 
 @Injectable({ providedIn: 'root' })
 export class ServiceCountExpressService {
   constructor(private countExpressService: HttpsCountExpressService) {}
 
-  responseCountExpressAlessandro: ICountExpress | undefined;
-  responseCountExpressCarmine: ICountExpress | undefined;
-  responseCountExpressDaniele: ICountExpress | undefined;
-  responseCountExpressNicolas: ICountExpress | undefined;
+  responseCountExpressAlessandro: ICountExpressHttps | undefined;
+  responseCountExpressCarmine: ICountExpressHttps | undefined;
+  responseCountExpressDaniele: ICountExpressHttps | undefined;
+  responseCountExpressNicolas: ICountExpressHttps | undefined;
 
   getCountExpress(person: string) {
     return this.countExpressService.getCountExpress(person).pipe(
-        map((data: ICountExpress) => {
+        map((data: ICountExpressHttps) => {
           return {
             express: data.express
           };
@@ -21,8 +21,8 @@ export class ServiceCountExpressService {
       );
   }
 
-  postCountExpress(value: number, person: string) {
-    return this.countExpressService.postCountExpress(value, person);
+  postCountExpress(person: string, value: number) {
+    return this.countExpressService.postCountExpress(person, value);
   }
 
 }

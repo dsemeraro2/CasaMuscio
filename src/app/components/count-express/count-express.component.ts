@@ -47,35 +47,19 @@ export class CountExpressComponent implements OnInit {
 
   //Popolo i countExpress
   counterExpressInitialize() {
-    this.countExpressService
-      .getCountExpress('countExpressAlessandro')
-      .subscribe((response: ICountExpressHttps) => {
-        this.countExpressAlessandro = response.express;
-      });
-
-    this.countExpressService
-      .getCountExpress('countExpressCarmine')
-      .subscribe((response: ICountExpressHttps) => {
-        this.countExpressCarmine = response.express;
-      });
-
-    this.countExpressService
-      .getCountExpress('countExpressDaniele')
-      .subscribe((response: ICountExpressHttps) => {
-        this.countExpressDaniele = response.express;
-      });
-      
-    this.countExpressService
-      .getCountExpress('countExpressNicolas')
-      .subscribe((response: ICountExpressHttps) => {
-        this.countExpressNicolas = response.express;
-      });
+    for (const item of this.countExpress) {
+      this.countExpressService
+        .getCountExpress(item.id)
+        .subscribe((response: ICountExpressHttps) => {
+          item.value = response.express;
+        });
+    }
   }
 
   //Incremento count
   counterExpressPlus(countExpress: ICountExpress) {
     this.countExpressService
-      .postCountExpress(countExpress.person, countExpress.value++)
+      .postCountExpress(countExpress.id, countExpress.value++)
       .subscribe();
   }
 
@@ -83,7 +67,7 @@ export class CountExpressComponent implements OnInit {
   counterExpressMinus(countExpress: ICountExpress) {
     if (countExpress.value > 0) {
       this.countExpressService
-        .postCountExpress(countExpress.person, countExpress.value--)
+        .postCountExpress(countExpress.id, countExpress.value--)
         .subscribe();
     }
   }
