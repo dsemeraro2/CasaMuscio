@@ -36,7 +36,7 @@ export class CountExpressComponent implements OnInit {
     this.countExpressService
       .getCountExpress()
       .subscribe((response: ICountExpress[]) => {
-        console.log("Repsonse", response);
+        console.log('Repsonse', response);
         this.countExpress = response;
       });
   }
@@ -44,18 +44,14 @@ export class CountExpressComponent implements OnInit {
   //Incremento count
   counterExpressPlus(countExpress: ICountExpress) {
     countExpress.value++;
-    this.countExpressService
-      .postCountExpress(countExpress)
-      .subscribe();
+    this.countExpressService.postCountExpress(countExpress).subscribe();
   }
 
   //Decremento count
   counterExpressMinus(countExpress: ICountExpress) {
-    countExpress.value--;
     if (countExpress.value > 0) {
-      this.countExpressService
-        .postCountExpress(countExpress)
-        .subscribe();
+      countExpress.value--;
+      this.countExpressService.postCountExpress(countExpress).subscribe();
     }
   }
 
@@ -63,10 +59,8 @@ export class CountExpressComponent implements OnInit {
   resetCounter() {
     console.log('Reset count!');
     for (const item of this.countExpress) {
-      item.value=0;
-      this.countExpressService
-        .postCountExpress(item)
-        .subscribe();
+      item.value = 0;
+      this.countExpressService.postCountExpress(item).subscribe();
     }
   }
 }
