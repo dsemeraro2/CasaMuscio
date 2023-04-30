@@ -41,7 +41,7 @@
       "type": "http",
       "documentation": "",
       "method": "post",
-      "endpoint": "expressCountAlessandro",
+      "endpoint": "countExpressAlessandro",
       "responses": [
         {
           "uuid": "cd2285a1-6843-445d-9388-08bf96c44579",
@@ -69,7 +69,7 @@
       "type": "http",
       "documentation": "",
       "method": "post",
-      "endpoint": "expressCountCarmine",
+      "endpoint": "countExpressCarmine",
       "responses": [
         {
           "uuid": "e00cd5bb-ebbd-42b0-8321-c0a1aab30187",
@@ -97,7 +97,7 @@
       "type": "http",
       "documentation": "",
       "method": "post",
-      "endpoint": "expressCountDaniele",
+      "endpoint": "countExpressDaniele",
       "responses": [
         {
           "uuid": "d3b9e427-6539-4f96-be8b-0f974547f544",
@@ -125,7 +125,7 @@
       "type": "http",
       "documentation": "",
       "method": "post",
-      "endpoint": "expressCountNicolas",
+      "endpoint": "countExpressNicolas",
       "responses": [
         {
           "uuid": "7cd81111-e050-4e05-b389-c074d4b1afab",
@@ -153,7 +153,7 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "expressCountAlessandro",
+      "endpoint": "countExpressAlessandro",
       "responses": [
         {
           "uuid": "a6f7feeb-1888-4529-a78b-7b0dc5b53bda",
@@ -181,7 +181,7 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "expressCountCarmine",
+      "endpoint": "countExpressCarmine",
       "responses": [
         {
           "uuid": "72254b86-61ad-4aee-9d22-6fb1e991c119",
@@ -209,7 +209,7 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "expressCountDaniele",
+      "endpoint": "countExpressDaniele",
       "responses": [
         {
           "uuid": "7c71a7bf-e66d-44d2-bdaf-3a512d61ef36",
@@ -237,7 +237,7 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "expressCountNicolas",
+      "endpoint": "countExpressNicolas",
       "responses": [
         {
           "uuid": "1a644db8-8bec-43b3-98ea-4ba6190fda8f",
