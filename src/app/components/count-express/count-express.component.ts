@@ -22,7 +22,7 @@ export class CountExpressComponent implements OnInit {
   countExpressDaniele = 0;
   countExpressNicolas = 0;
 
-  //Popolo il counter
+  //Popolo i countExpress
   counterExpressInitialize(){
     this.countExpressService.getCountExpress('countExpressAlessandro').subscribe((response: ICountExpress) => {
       this.countExpressAlessandro = response.express;
