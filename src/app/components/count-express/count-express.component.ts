@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountExpressService, ICountExpress } from 'src/app/services/count-express.service';
 
 @Component({
@@ -6,8 +6,12 @@ import { CountExpressService, ICountExpress } from 'src/app/services/count-expre
   templateUrl: './count-express.component.html',
   styleUrls: ['./count-express.component.css']
 })
-export class CountExpressComponent {
-
+export class CountExpressComponent implements OnInit {
+  
+  ngOnInit() {
+    this.showCountExpressAlessandro();    
+  }
+  
   constructor(private countExpressService: CountExpressService){}
   
   responseStatusAlessandro: ICountExpress | undefined;

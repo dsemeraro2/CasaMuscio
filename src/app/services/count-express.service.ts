@@ -11,10 +11,11 @@ export interface ICountExpress {
 export class CountExpressService {
     constructor(private httpClient: HttpClient) { }
 
-    configUrl = 'countExpressAlessandro';
+    path = 'http://192.168.1.15:3000/'
+    countExpressAlessandroURL = this.path + 'countExpressAlessandro';
 
     getCountExpressAlessandro() {
-        return this.httpClient.get<ICountExpress>(this.configUrl);
+        return this.httpClient.get<ICountExpress>(this.countExpressAlessandroURL);
       }
     
 }
