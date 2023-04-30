@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceCountExpressService } from './service-count-express.service';
 import { ICountExpress } from 'src/app/services/https-count-express.service';
 
-
-
 @Component({
   selector: 'app-count-express',
   templateUrl: './count-express.component.html',
@@ -38,13 +36,12 @@ export class CountExpressComponent implements OnInit {
 
   //Popolo i countExpress
   counterExpressInitialize() {
-    
-      this.countExpressService
-        .getCountExpress()
-        .subscribe((response: ICountExpress[]) => {
-          this.countExpress = response;
-        });
-    
+    this.countExpressService
+      .getCountExpress()
+      .subscribe((response: ICountExpress[]) => {
+        console.log("Repsonse", response);
+        this.countExpress = response;
+      });
   }
 
   //Incremento count
@@ -68,8 +65,8 @@ export class CountExpressComponent implements OnInit {
     console.log('Reset count!');
     for (const item of this.countExpress) {
       this.countExpressService
-      .postCountExpress(item.id, item.value=0)
-      .subscribe();
+        .postCountExpress(item.id, (item.value = 0))
+        .subscribe();
     }
   }
 }

@@ -16,7 +16,7 @@ export class HttpsCountExpressService {
   path = 'http://192.168.1.15:3000/';
 
   getCountExpress() {
-    return this.httpClient.get<ICountExpress[]>(this.path + '');
+    return this.httpClient.get<ICountExpress[]>(this.path + 'countExpress');
   }
 
   postCountExpress(person: string, value: number) {

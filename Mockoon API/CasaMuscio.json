@@ -121,118 +121,6 @@
       "responseMode": null
     },
     {
-      "uuid": "a70f3209-ad85-4ffc-ab09-b10981364255",
-      "type": "http",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "countExpressAlessandro",
-      "responses": [
-        {
-          "uuid": "a6f7feeb-1888-4529-a78b-7b0dc5b53bda",
-          "body": "{\n  \"express\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "48c64faf-5422-4f1f-83c5-20fc20f3715a",
-      "type": "http",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "countExpressCarmine",
-      "responses": [
-        {
-          "uuid": "72254b86-61ad-4aee-9d22-6fb1e991c119",
-          "body": "{\n  \"express\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "b02814c1-8223-4b6b-92c1-1e8ada937821",
-      "type": "http",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "countExpressDaniele",
-      "responses": [
-        {
-          "uuid": "7c71a7bf-e66d-44d2-bdaf-3a512d61ef36",
-          "body": "{\n  \"express\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "a956a515-edab-4a34-8e6b-4111d056c67e",
-      "type": "http",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "countExpressNicolas",
-      "responses": [
-        {
-          "uuid": "1a644db8-8bec-43b3-98ea-4ba6190fda8f",
-          "body": "{\n  \"express\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
       "uuid": "bb3bb72a-24d8-41f6-946c-e9482782a3f0",
       "type": "http",
       "documentation": "",
@@ -345,34 +233,6 @@
       "responseMode": null
     },
     {
-      "uuid": "b01b9d74-1848-444c-b381-e1be0358ac15",
-      "type": "http",
-      "documentation": "",
-      "method": "get",
-      "endpoint": "countExpress/:id",
-      "responses": [
-        {
-          "uuid": "a0b31e7b-1c02-4170-8f22-917b7cfd0532",
-          "body": "{}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
       "uuid": "1f08cde6-ce9e-458f-9598-4403972c0097",
       "type": "http",
       "documentation": "",
@@ -381,7 +241,7 @@
       "responses": [
         {
           "uuid": "9346a8f4-d7e9-48ec-bb71-24d93711fafa",
-          "body": "{\r\n  [{\r\n    id: 'countExpressAlessandro',\r\n    person: 'Alessandro',\r\n    value: {{ faker 'datatype.number' min=0 max=10 }},\r\n  },\r\n  {\r\n    id: 'countExpressCarmine',\r\n    person: 'Carmine',\r\n    value: {{ faker 'datatype.number' min=0 max=10 }},\r\n  },\r\n  {\r\n    id: 'countExpressDaniele',\r\n    person: 'Daniele',\r\n    value: {{ faker 'datatype.number' min=0 max=10 }},\r\n  },\r\n  { \r\n    id: 'countExpressNicolas', \r\n    person: 'Nicolas', \r\n    value: {{ faker 'datatype.number' min=0 max=10 }}\r\n  }]\r\n}",
+          "body": "{\r\n  [{\r\n    \"id\": \"countExpressAlessandro\",\r\n    \"person\": \"Alessandro\",\r\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\r\n  },\r\n  {\r\n    \"id\": \"countExpressCarmine\",\r\n    \"person\": \"Carmine\",\r\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\r\n  },\r\n  {\r\n    \"id\": \"countExpressDaniele\",\r\n    \"person\": \"Daniele\",\r\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\r\n  },\r\n  { \r\n    \"id\": \"countExpressNicolas\", \r\n    \"person\": \"Nicolas\", \r\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\r\n  }]\r\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -408,19 +268,7 @@
     },
     {
       "type": "route",
-      "uuid": "b01b9d74-1848-444c-b381-e1be0358ac15"
-    },
-    {
-      "type": "route",
-      "uuid": "a70f3209-ad85-4ffc-ab09-b10981364255"
-    },
-    {
-      "type": "route",
       "uuid": "5e16aff8-e76a-4ebf-b00e-78588f91e038"
-    },
-    {
-      "type": "route",
-      "uuid": "48c64faf-5422-4f1f-83c5-20fc20f3715a"
     },
     {
       "type": "route",
@@ -428,15 +276,7 @@
     },
     {
       "type": "route",
-      "uuid": "b02814c1-8223-4b6b-92c1-1e8ada937821"
-    },
-    {
-      "type": "route",
       "uuid": "2b8c542c-666d-498d-9a98-f733379f7951"
-    },
-    {
-      "type": "route",
-      "uuid": "a956a515-edab-4a34-8e6b-4111d056c67e"
     },
     {
       "type": "route",
