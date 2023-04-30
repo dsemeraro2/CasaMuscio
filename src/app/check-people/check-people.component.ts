@@ -10,4 +10,9 @@ export class CheckPeopleComponent {
   statusCarmine = 'Offline';
   statusDaniele = 'Offline';
   statusNicolas = 'Online';
+
+  reload(){
+    console.log("Ricaricato!")
+  }
+
 }
