@@ -15,7 +15,8 @@
         </div>
 
         <div class="flex justify-center w-1/2">
-            <p [ngClass]="statusAlessandro === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusAlessandro}}</p>
+            <div *ngIf="statusAlessandro === 'Loading'">Loading</div>
+            <p *ngIf="statusAlessandro != 'Loading'" [ngClass]="statusAlessandro === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusAlessandro}}</p>
         </div>
 
     </div>
@@ -25,7 +26,8 @@
         </div>
 
         <div class="flex justify-center w-1/2">
-            <p [ngClass]="statusCarmine === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusCarmine}}</p>
+            <div *ngIf="statusCarmine === 'Loading'">Loading</div>
+            <p *ngIf="statusCarmine != 'Loading'" [ngClass]="statusCarmine === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusCarmine}}</p>
         </div>
 
     </div>
@@ -35,7 +37,8 @@
         </div>
 
         <div class="flex justify-center w-1/2">
-            <p [ngClass]="statusDaniele === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusDaniele}}</p>
+            <div *ngIf="statusDaniele === 'Loading'">Loading</div>
+            <p *ngIf="statusDaniele != 'Loading'" [ngClass]="statusDaniele === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusDaniele}}</p>
         </div>
 
     </div>
@@ -45,6 +48,8 @@
         </div>
 
         <div class="flex justify-center w-1/2">
-            <p [ngClass]="statusNicolas === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusNicolas}}</p>
+            
+            <div *ngIf="statusNicolas === 'Loading'">Loading</div>
+            <p *ngIf="statusNicolas != 'Loading'" [ngClass]="statusNicolas === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusNicolas}}</p>
         </div>
     </div>
