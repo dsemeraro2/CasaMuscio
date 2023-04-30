@@ -40,11 +40,6 @@ export class CountExpressComponent implements OnInit {
     { id: 'countExpressNicolas', person: 'Nicolas', value: 0 },
   ];
 
-  countExpressAlessandro = 0;
-  countExpressCarmine = 0;
-  countExpressDaniele = 0;
-  countExpressNicolas = 0;
-
   //Popolo i countExpress
   counterExpressInitialize() {
     for (const item of this.countExpress) {
@@ -74,9 +69,10 @@ export class CountExpressComponent implements OnInit {
 
   resetCounter() {
     console.log('Reset count!');
-    this.countExpressAlessandro = 0;
-    this.countExpressCarmine = 0;
-    this.countExpressDaniele = 0;
-    this.countExpressNicolas = 0;
+    for (const item of this.countExpress) {
+      this.countExpressService
+      .postCountExpress(item.id, item.value=0)
+      .subscribe();
+    }
   }
 }
