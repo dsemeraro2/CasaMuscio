@@ -265,11 +265,11 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "checkAvailabilityAlessandro",
+      "endpoint": "checkStatusAlessandro",
       "responses": [
         {
           "uuid": "39c1fef0-a68a-49d2-a830-a7264c4b272d",
-          "body": "{\n  availability: \"{{someOf (array 'true' 'false') 1 1 }}\"\n}",
+          "body": "{\n  status: \"{{someOf (array 'Online' 'Offline') 1 1 }}\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -293,11 +293,11 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "checkAvailabilityCarmine",
+      "endpoint": "checkStatusCarmine",
       "responses": [
         {
           "uuid": "2044166e-9286-483c-99e7-b30e95e36f36",
-          "body": "{\n  availability: \"{{someOf (array 'true' 'false') 1 1 }}\"\n}",
+          "body": "{\n  status: \"{{someOf (array 'Online' 'Offline') 1 1 }}\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -321,11 +321,11 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "checkAvailabilityDaniele",
+      "endpoint": "checkStatusDaniele",
       "responses": [
         {
           "uuid": "f6159bca-c9c6-46eb-ab5d-ec5dc942edd8",
-          "body": "{\n  availability: \"{{someOf (array 'true' 'false') 1 1 }}\"\n}",
+          "body": "{\n  status: \"{{someOf (array 'Online' 'Offline') 1 1 }}\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -349,11 +349,11 @@
       "type": "http",
       "documentation": "",
       "method": "get",
-      "endpoint": "checkAvailabilityNicolas",
+      "endpoint": "checkStatusNicolas",
       "responses": [
         {
           "uuid": "d8b4726b-0e0d-479a-b9c9-3498afac1842",
-          "body": "{\n  availability: \"{{someOf (array 'true' 'false') 1 1 }}\"\n}",
+          "body": "{\n  status: \"{{someOf (array 'Online' 'Offline') 1 1 }}\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
