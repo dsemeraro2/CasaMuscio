@@ -67,6 +67,7 @@ export class CountExpressComponent implements OnInit {
     }
   }
 
+  //Resetto count
   resetCounter() {
     console.log('Reset count!');
     for (const item of this.countExpress) {
