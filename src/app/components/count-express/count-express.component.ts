@@ -1,5 +1,8 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { CountExpressService, ICountExpress } from 'src/app/services/count-express.service';
+import { Observable } from 'rxjs';
+import { HttpsCountExpressService, ICountExpress } from 'src/app/services/https-count-express.service';
+import { ServiceCountExpressService } from './service-count-express.service';
 
 @Component({
   selector: 'app-count-express',
@@ -9,60 +12,40 @@ import { CountExpressService, ICountExpress } from 'src/app/services/count-expre
 export class CountExpressComponent implements OnInit {
   
   ngOnInit() {
-    this.showCountExpressAlessandro();    
+    this.counterExpressInitialize();
   }
   
-  constructor(private countExpressService: CountExpressService){}
+  constructor(private countExpressService: ServiceCountExpressService) {}
   
-  responseStatusAlessandro: ICountExpress | undefined;
+  countExpressAlessandro = 0;
+  countExpressCarmine = 0;
+  countExpressDaniele = 0;
+  countExpressNicolas = 0;
 
-  expressAlessandro = 0;
-  expressCarmine = 0;
-  expressDaniele = 0;
-  expressNicolas = 0;
+  //Popolo il counter
+  counterExpressInitialize(){
+    this.countExpressService.getCountExpress('countExpressAlessandro').subscribe((response: ICountExpress) => {
+      this.countExpressAlessandro = response.express;
+    });
+    this.countExpressService.getCountExpress('countExpressCarmine').subscribe((response: ICountExpress) => {
+      this.countExpressCarmine = response.express;
+    });
+    this.countExpressService.getCountExpress('countExpressDaniele').subscribe((response: ICountExpress) => {
+      this.countExpressDaniele = response.express;
+    });
+    this.countExpressService.getCountExpress('countExpressNicolas').subscribe((response: ICountExpress) => {
+      this.countExpressNicolas = response.express;
+    });
+  }
 
   counterExpressPlus(value: string) {
-    if(value == "expressAlessandro"){
-      this.expressAlessandro++;
-    }
-    if(value == "expressCarmine"){
-      this.expressCarmine++;
-    }
-    if(value == "expressDaniele"){
-      this.expressDaniele++;
-    }
-    if(value == "expressNicolas"){
-      this.expressNicolas++;
-    }
   }
 
   counterExpressMinus(value: string) {
-    if(value == "expressAlessandro" && this.expressAlessandro>0){
-      this.expressAlessandro--;
-    }
-    if(value == "expressCarmine" && this.expressCarmine>0){
-      this.expressCarmine--;
-    }
-    if(value == "expressDaniele" && this.expressDaniele>0){
-      this.expressDaniele--;
-    }
-    if(value == "expressNicolas" && this.expressNicolas>0){
-      this.expressNicolas--;
-    }
   }
 
   resetCounter(){
-    this.expressAlessandro=0;
-    this.expressCarmine=0;
-    this.expressDaniele=0;
-    this.expressNicolas=0;
-  }
-
-  showCountExpressAlessandro() {
-    this.countExpressService.getCountExpressAlessandro()
-      .subscribe((data: ICountExpress) => this.responseStatusAlessandro = {
-          express: data.express,
-      });
+    console.log("Reset count!");
   }
 
 }
