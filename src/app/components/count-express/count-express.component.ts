@@ -17,21 +17,18 @@ export class CountExpressComponent implements OnInit {
   //Contatori
   countExpress: ICountExpress[] = [
     {
-      id: 'countExpressAlessandro',
-      person: 'Alessandro',
+      id: 'Alessandro',
       value: 0,
     },
     {
-      id: 'countExpressCarmine',
-      person: 'Carmine',
+      id: 'Carmine',
       value: 0,
     },
     {
-      id: 'countExpressDaniele',
-      person: 'Daniele',
+      id: 'Daniele',
       value: 0,
     },
-    { id: 'countExpressNicolas', person: 'Nicolas', value: 0 },
+    { id: 'Nicolas', value: 0 },
   ];
 
   //Popolo i countExpress
@@ -47,7 +44,7 @@ export class CountExpressComponent implements OnInit {
   //Incremento count
   counterExpressPlus(countExpress: ICountExpress) {
     this.countExpressService
-      .postCountExpress(countExpress.id, countExpress.value++)
+      .postCountExpress(countExpress)
       .subscribe();
   }
 
@@ -55,7 +52,7 @@ export class CountExpressComponent implements OnInit {
   counterExpressMinus(countExpress: ICountExpress) {
     if (countExpress.value > 0) {
       this.countExpressService
-        .postCountExpress(countExpress.id, countExpress.value--)
+        .postCountExpress(countExpress)
         .subscribe();
     }
   }
@@ -64,8 +61,9 @@ export class CountExpressComponent implements OnInit {
   resetCounter() {
     console.log('Reset count!');
     for (const item of this.countExpress) {
+      item.value=0;
       this.countExpressService
-        .postCountExpress(item.id, (item.value = 0))
+        .postCountExpress(item)
         .subscribe();
     }
   }

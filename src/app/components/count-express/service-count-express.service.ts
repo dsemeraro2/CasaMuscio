@@ -14,8 +14,8 @@ export class ServiceCountExpressService {
     return this.countExpressService.getCountExpress();
   }
 
-  postCountExpress(person: string, value: number) {
-    return this.countExpressService.postCountExpress(person, value);
+  postCountExpress(item: ICountExpress) {
+    return this.countExpressService.postCountExpress(item);
   }
 
 }

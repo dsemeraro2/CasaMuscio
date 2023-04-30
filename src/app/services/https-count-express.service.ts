@@ -5,7 +5,6 @@ import { catchError, retry } from 'rxjs/operators';
 
 export interface ICountExpress {
   id: string;
-  person: string;
   value: number;
 }
 
@@ -19,9 +18,8 @@ export class HttpsCountExpressService {
     return this.httpClient.get<ICountExpress[]>(this.path + 'countExpress');
   }
 
-  postCountExpress(person: string, value: number) {
-    return this.httpClient.post<ICountExpress>(this.path + person, value);
+  postCountExpress(item: ICountExpress) {
+    return this.httpClient.post<ICountExpress>(this.path + item.id, item.value);
   }
-
 
 }

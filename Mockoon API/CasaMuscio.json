@@ -241,7 +241,7 @@
       "responses": [
         {
           "uuid": "9346a8f4-d7e9-48ec-bb71-24d93711fafa",
-          "body": "[\n  {\n    \"id\": \"countExpressAlessandro\",\n    \"person\": \"Alessandro\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  },\n  {\n    \"id\": \"countExpressCarmine\",\n    \"person\": \"Carmine\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  },\n  {\n    \"id\": \"countExpressDaniele\",\n    \"person\": \"Daniele\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  },\n  {\n    \"id\": \"countExpressNicolas\",\n    \"person\": \"Nicolas\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  }\n]",
+          "body": "[\n  {\n    \"id\": \"Alessandro\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  },\n  {\n    \"id\": \"Carmine\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  },\n  {\n    \"id\": \"Daniele\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  },\n  {\n    \"id\": \"Nicolas\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  }\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "",
