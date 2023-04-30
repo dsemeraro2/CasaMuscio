@@ -13,8 +13,13 @@ export class HttpsCountExpressService {
 
   path = 'http://192.168.1.15:3000/';
 
-  getCountExpress(value: string) {
-    return this.httpClient.get<ICountExpress>(this.path + value);
+  getCountExpress(person: string) {
+    return this.httpClient.get<ICountExpress>(this.path + person);
   }
+
+  postCountExpress(value: number, person: string) {
+    return this.httpClient.post<ICountExpress>(this.path + person, value);
+  }
+
 
 }

@@ -11,14 +11,18 @@ export class ServiceCountExpressService {
   responseCountExpressDaniele: ICountExpress | undefined;
   responseCountExpressNicolas: ICountExpress | undefined;
 
-  getCountExpress(value: string) {
-    return this.countExpressService.getCountExpress(value).pipe(
+  getCountExpress(person: string) {
+    return this.countExpressService.getCountExpress(person).pipe(
         map((data: ICountExpress) => {
           return {
             express: data.express
           };
         })
       );
+  }
+
+  postCountExpress(value: number, person: string) {
+    return this.countExpressService.postCountExpress(value, person);
   }
 
 }
