@@ -39,13 +39,41 @@ export class CountExpressComponent implements OnInit {
   }
 
   counterExpressPlus(value: string) {
+    if(value === 'countExpressAlessandro'){
+      this.countExpressAlessandro++;
+    }
+    if(value === 'countExpressCarmine'){
+      this.countExpressCarmine++;
+    }
+    if(value === 'countExpressDaniele'){
+      this.countExpressDaniele++;
+    }
+    if(value === 'countExpressNicolas'){
+      this.countExpressNicolas++;
+    }
   }
 
   counterExpressMinus(value: string) {
+    if(value === 'countExpressAlessandro' && this.countExpressAlessandro>0){
+      this.countExpressAlessandro--;
+    }
+    if(value === 'countExpressCarmine' && this.countExpressCarmine>0){
+      this.countExpressCarmine--;
+    }
+    if(value === 'countExpressDaniele' && this.countExpressDaniele>0){
+      this.countExpressDaniele--;
+    }
+    if(value === 'countExpressNicolas' && this.countExpressNicolas>0){
+      this.countExpressNicolas--;
+    }
   }
 
   resetCounter(){
     console.log("Reset count!");
+    this.countExpressAlessandro = 0;
+    this.countExpressCarmine = 0;
+    this.countExpressDaniele = 0;
+    this.countExpressNicolas = 0;
   }
 
 }
