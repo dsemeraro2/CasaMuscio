@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ICountExpress } from 'src/app/services/https-count-express.service';
 import { ServiceCountExpressService } from './service-count-express.service';
+import { ICountExpressHttps } from 'src/app/services/https-count-express.service';
+
+interface ICountExpress {
+  id: string;
+  person: string;
+  value: number;
+}
 
 @Component({
   selector: 'app-count-express',
@@ -15,6 +21,25 @@ export class CountExpressComponent implements OnInit {
   constructor(private countExpressService: ServiceCountExpressService) {}
 
   //Contatori
+  countExpress: ICountExpress[] = [
+    {
+      id: 'countExpressAlessandro',
+      person: 'Alessandro',
+      value: 0,
+    },
+    {
+      id: 'countExpressCarmine',
+      person: 'Carmine',
+      value: 0,
+    },
+    {
+      id: 'countExpressDaniele',
+      person: 'Daniele',
+      value: 0,
+    },
+    { id: 'countExpressNicolas', person: 'Nicolas', value: 0 },
+  ];
+
   countExpressAlessandro = 0;
   countExpressCarmine = 0;
   countExpressDaniele = 0;
@@ -24,73 +49,42 @@ export class CountExpressComponent implements OnInit {
   counterExpressInitialize() {
     this.countExpressService
       .getCountExpress('countExpressAlessandro')
-      .subscribe((response: ICountExpress) => {
+      .subscribe((response: ICountExpressHttps) => {
         this.countExpressAlessandro = response.express;
       });
+
     this.countExpressService
       .getCountExpress('countExpressCarmine')
-      .subscribe((response: ICountExpress) => {
+      .subscribe((response: ICountExpressHttps) => {
         this.countExpressCarmine = response.express;
       });
+
     this.countExpressService
       .getCountExpress('countExpressDaniele')
-      .subscribe((response: ICountExpress) => {
+      .subscribe((response: ICountExpressHttps) => {
         this.countExpressDaniele = response.express;
       });
+      
     this.countExpressService
       .getCountExpress('countExpressNicolas')
-      .subscribe((response: ICountExpress) => {
+      .subscribe((response: ICountExpressHttps) => {
         this.countExpressNicolas = response.express;
       });
   }
 
-  counterExpressPlus(person: string) {
-    if (person === 'countExpressAlessandro') {
-      this.countExpressService
-        .postCountExpress(
-          this.countExpressAlessandro++,
-          'value'
-        )
-        .subscribe();
-    }
-    if (person === 'countExpressCarmine') {
-      this.countExpressService
-        .postCountExpress(
-          this.countExpressCarmine++,
-          'value'
-        )
-        .subscribe();
-    }
-    if (person === 'countExpressDaniele') {
-      this.countExpressService
-        .postCountExpress(
-          this.countExpressDaniele++,
-          'value'
-        )
-        .subscribe();
-    }
-    if (person === 'countExpressNicolas') {
-      this.countExpressService
-        .postCountExpress(
-          this.countExpressNicolas++,
-          'value'
-        )
-        .subscribe();
-    }
+  //Incremento count
+  counterExpressPlus(countExpress: ICountExpress) {
+    this.countExpressService
+      .postCountExpress(countExpress.person, countExpress.value++)
+      .subscribe();
   }
 
-  counterExpressMinus(value: string) {
-    if (value === 'countExpressAlessandro' && this.countExpressAlessandro > 0) {
-      this.countExpressAlessandro--;
-    }
-    if (value === 'countExpressCarmine' && this.countExpressCarmine > 0) {
-      this.countExpressCarmine--;
-    }
-    if (value === 'countExpressDaniele' && this.countExpressDaniele > 0) {
-      this.countExpressDaniele--;
-    }
-    if (value === 'countExpressNicolas' && this.countExpressNicolas > 0) {
-      this.countExpressNicolas--;
+  //Decremento count
+  counterExpressMinus(countExpress: ICountExpress) {
+    if (countExpress.value > 0) {
+      this.countExpressService
+        .postCountExpress(countExpress.person, countExpress.value--)
+        .subscribe();
     }
   }
 
