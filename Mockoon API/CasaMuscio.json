@@ -371,9 +371,41 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "1f08cde6-ce9e-458f-9598-4403972c0097",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "countExpress",
+      "responses": [
+        {
+          "uuid": "9346a8f4-d7e9-48ec-bb71-24d93711fafa",
+          "body": "{\r\n  [{\r\n    id: 'countExpressAlessandro',\r\n    person: 'Alessandro',\r\n    value: {{ faker 'datatype.number' min=0 max=10 }},\r\n  },\r\n  {\r\n    id: 'countExpressCarmine',\r\n    person: 'Carmine',\r\n    value: {{ faker 'datatype.number' min=0 max=10 }},\r\n  },\r\n  {\r\n    id: 'countExpressDaniele',\r\n    person: 'Daniele',\r\n    value: {{ faker 'datatype.number' min=0 max=10 }},\r\n  },\r\n  { \r\n    id: 'countExpressNicolas', \r\n    person: 'Nicolas', \r\n    value: {{ faker 'datatype.number' min=0 max=10 }}\r\n  }]\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "1f08cde6-ce9e-458f-9598-4403972c0097"
+    },
     {
       "type": "route",
       "uuid": "b01b9d74-1848-444c-b381-e1be0358ac15"

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
-export interface ICountExpressHttps {
-  express: number;
+export interface ICountExpress {
+  id: string;
+  person: string;
+  value: number;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -13,12 +15,12 @@ export class HttpsCountExpressService {
 
   path = 'http://192.168.1.15:3000/';
 
-  getCountExpress(person: string) {
-    return this.httpClient.get<ICountExpressHttps>(this.path + person);
+  getCountExpress() {
+    return this.httpClient.get<ICountExpress[]>(this.path + '');
   }
 
   postCountExpress(person: string, value: number) {
-    return this.httpClient.post<ICountExpressHttps>(this.path + person, value);
+    return this.httpClient.post<ICountExpress>(this.path + person, value);
   }
 
 

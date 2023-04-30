@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceCountExpressService } from './service-count-express.service';
-import { ICountExpressHttps } from 'src/app/services/https-count-express.service';
+import { ICountExpress } from 'src/app/services/https-count-express.service';
 
-interface ICountExpress {
-  id: string;
-  person: string;
-  value: number;
-}
+
 
 @Component({
   selector: 'app-count-express',
@@ -42,13 +38,13 @@ export class CountExpressComponent implements OnInit {
 
   //Popolo i countExpress
   counterExpressInitialize() {
-    for (const item of this.countExpress) {
+    
       this.countExpressService
-        .getCountExpress(item.id)
-        .subscribe((response: ICountExpressHttps) => {
-          item.value = response.express;
+        .getCountExpress()
+        .subscribe((response: ICountExpress[]) => {
+          this.countExpress = response;
         });
-    }
+    
   }
 
   //Incremento count
