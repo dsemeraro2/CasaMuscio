@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CountExpressService, ICountExpress } from 'src/app/services/count-express.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { CountExpressService, ICountExpress } from 'src/app/services/count-expre
 })
 export class CountExpressComponent {
 
-  constructor(private http: HttpClient, private countExpressService: CountExpressService){}
+  constructor(private countExpressService: CountExpressService){}
   
   responseStatusAlessandro: ICountExpress | undefined;
 
