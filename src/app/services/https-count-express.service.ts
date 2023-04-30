@@ -19,7 +19,7 @@ export class HttpsCountExpressService {
   }
 
   postCountExpress(item: ICountExpress) {
-    return this.httpClient.post<ICountExpress>(this.path + item.id, item.value);
+    return this.httpClient.post<ICountExpress>(this.path + 'countExpress/' + item.id + '/' + item.value, null);
   }
 
 }

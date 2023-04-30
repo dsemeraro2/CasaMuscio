@@ -43,6 +43,7 @@ export class CountExpressComponent implements OnInit {
 
   //Incremento count
   counterExpressPlus(countExpress: ICountExpress) {
+    countExpress.value++;
     this.countExpressService
       .postCountExpress(countExpress)
       .subscribe();
@@ -50,6 +51,7 @@ export class CountExpressComponent implements OnInit {
 
   //Decremento count
   counterExpressMinus(countExpress: ICountExpress) {
+    countExpress.value--;
     if (countExpress.value > 0) {
       this.countExpressService
         .postCountExpress(countExpress)

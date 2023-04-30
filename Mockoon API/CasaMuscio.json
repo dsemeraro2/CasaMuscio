@@ -9,118 +9,6 @@
   "folders": [],
   "routes": [
     {
-      "uuid": "5e16aff8-e76a-4ebf-b00e-78588f91e038",
-      "type": "http",
-      "documentation": "",
-      "method": "post",
-      "endpoint": "countExpressAlessandro",
-      "responses": [
-        {
-          "uuid": "cd2285a1-6843-445d-9388-08bf96c44579",
-          "body": "{{body}}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "29367fb6-23f0-45af-8cf6-923b934d3e7b",
-      "type": "http",
-      "documentation": "",
-      "method": "post",
-      "endpoint": "countExpressCarmine",
-      "responses": [
-        {
-          "uuid": "e00cd5bb-ebbd-42b0-8321-c0a1aab30187",
-          "body": "{{body}}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "2b8c542c-666d-498d-9a98-f733379f7951",
-      "type": "http",
-      "documentation": "",
-      "method": "post",
-      "endpoint": "countExpressDaniele",
-      "responses": [
-        {
-          "uuid": "d3b9e427-6539-4f96-be8b-0f974547f544",
-          "body": "{{body}}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
-      "uuid": "62f0bc49-4d5a-4b40-9ccc-c0d6c7f43a63",
-      "type": "http",
-      "documentation": "",
-      "method": "post",
-      "endpoint": "countExpressNicolas",
-      "responses": [
-        {
-          "uuid": "7cd81111-e050-4e05-b389-c074d4b1afab",
-          "body": "{{body}}",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "",
-          "headers": [],
-          "bodyType": "INLINE",
-          "filePath": "",
-          "databucketID": "",
-          "sendFileAsBody": false,
-          "rules": [],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": true
-        }
-      ],
-      "enabled": true,
-      "responseMode": null
-    },
-    {
       "uuid": "bb3bb72a-24d8-41f6-946c-e9482782a3f0",
       "type": "http",
       "documentation": "",
@@ -259,6 +147,34 @@
       ],
       "enabled": true,
       "responseMode": null
+    },
+    {
+      "uuid": "957be75a-97e1-4c94-903d-e2f707355fff",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "countExpress/:id/:value",
+      "responses": [
+        {
+          "uuid": "b92544da-ebd4-417b-b20b-4d949ef2b1af",
+          "body": "[\n  {\n    \"id\": \"Alessandro\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  },\n  {\n    \"id\": \"Carmine\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  },\n  {\n    \"id\": \"Daniele\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  },\n  {\n    \"id\": \"Nicolas\",\n    \"value\": \"{{ faker 'datatype.number' min=0 max=10 }}\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -268,19 +184,7 @@
     },
     {
       "type": "route",
-      "uuid": "5e16aff8-e76a-4ebf-b00e-78588f91e038"
-    },
-    {
-      "type": "route",
-      "uuid": "29367fb6-23f0-45af-8cf6-923b934d3e7b"
-    },
-    {
-      "type": "route",
-      "uuid": "2b8c542c-666d-498d-9a98-f733379f7951"
-    },
-    {
-      "type": "route",
-      "uuid": "62f0bc49-4d5a-4b40-9ccc-c0d6c7f43a63"
+      "uuid": "957be75a-97e1-4c94-903d-e2f707355fff"
     },
     {
       "type": "route",
