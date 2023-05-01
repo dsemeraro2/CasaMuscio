@@ -5,7 +5,7 @@ import { catchError, retry } from 'rxjs/operators';
 
 export interface ICheckStatus{
   id: string;
-  value: number;
+  value: string; //Loading, Online, Offline
 }
 
 @Injectable({ providedIn: 'root' })

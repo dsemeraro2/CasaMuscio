@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceCheckStatusService } from './service-check-status.service';
+import { ICheckStatus } from 'src/app/services/https-check-status.service';
 
-interface ICheckStatus {
-  id: string;
-  value: string; //Loading, Online, Offline
-}
 @Component({
   selector: 'app-check-status',
   templateUrl: './check-status.component.html',
@@ -14,15 +12,17 @@ export class CheckStatusComponent implements OnInit {
     this.loadStatus();
   }
 
+  constructor(private checkStatusService: ServiceCheckStatusService) {}
+
   //Contatori
   checkStatus: ICheckStatus[] = [
     {
       id: 'Alessandro',
-      value: 'Online',
+      value: 'Loading',
     },
     {
       id: 'Carmine',
-      value: 'Offline',
+      value: 'Loading',
     },
     {
       id: 'Daniele',
@@ -34,11 +34,16 @@ export class CheckStatusComponent implements OnInit {
   loading: boolean = false;
   
   loadStatus() {
-    console.log('Caricato!');
+    this.checkStatusService
+      .getCheckStatus()
+      .subscribe((response: ICheckStatus[]) => {
+        this.checkStatus = response;
+      });
   }
 
   reloadStatus() {
     this.loading = true;
+    this.loadStatus();
 
     setTimeout(() => {
       this.loading = false;
