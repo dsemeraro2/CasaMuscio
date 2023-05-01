@@ -4,9 +4,9 @@
         <div class="flex flex-row w-full">
 
             <div class="flex flex-row w-full">
-                <p class="flex justify-start pl-6 w-full">Conta corriere:</p>
+                <p class="flex flex-row pl-6 w-full">Conta corriere:</p>
 
-                <div class="flex flex-row justify-end items-end pr-2 w-full text-sm">
+                <div class="flex flex-row justify-end items-end pr-2 w-1/3 text-sm">
                     <!-- Mostra l'icona di reset -->
                     <div *ngIf="resetting; else reset">
                         <button>Resettati!</button>
@@ -24,16 +24,19 @@
         <p class="border-b-2 border-white pb-2 w-full"></p>
     </div>
 
-    <div *ngFor="let item of countExpress" class="flex py-4 w-full">
-        <div class="flex w-1/2 pl-6">
-            <p>{{item.id}}:</p>
+    <div class="flex flex-col py-4 w-full">
+        <div *ngFor="let item of countExpress" class="flex py-4 w-full">
+            <div class="flex w-1/2 pl-6">
+                <p>{{item.id}}:</p>
+            </div>
+    
+            <div class="flex justify-center w-1/2">
+                <button (click)="counterExpressMinus(item)" class="px-6">-</button>
+                <p>{{item.value}}</p>
+                <button (click)="counterExpressPlus(item)" class="px-6">+</button>
+            </div>
+    
         </div>
-
-        <div class="flex justify-center w-1/2">
-            <button (click)="counterExpressMinus(item)" class="px-6">-</button>
-            <p>{{item.value}}</p>
-            <button (click)="counterExpressPlus(item)" class="px-6">+</button>
-        </div>
-
     </div>
+    
 </div>
