@@ -5,11 +5,6 @@ import { HttpsCountExpressService, ICountExpress} from 'src/app/services/https-c
 export class ServiceCountExpressService {
   constructor(private countExpressService: HttpsCountExpressService) {}
 
-  responseCountExpressAlessandro: ICountExpress | undefined;
-  responseCountExpressCarmine: ICountExpress | undefined;
-  responseCountExpressDaniele: ICountExpress | undefined;
-  responseCountExpressNicolas: ICountExpress | undefined;
-
   getCountExpress() {
     return this.countExpressService.getCountExpress();
   }
