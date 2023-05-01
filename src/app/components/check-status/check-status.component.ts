@@ -5,14 +5,14 @@ interface ICheckStatus{
   value: string;
 }
 @Component({
-  selector: 'app-check-people',
-  templateUrl: './check-people.component.html',
-  styleUrls: ['./check-people.component.css'],
+  selector: 'app-check-status',
+  templateUrl: './check-status.component.html',
+  styleUrls: ['./check-status.component.css'],
 })
-export class CheckPeopleComponent implements OnInit {
+export class CheckStatusComponent implements OnInit {
   
   ngOnInit() {
-    this.reload();    
+    this.loadStatus();    
   }
   
   //Contatori
@@ -32,7 +32,11 @@ export class CheckPeopleComponent implements OnInit {
     { id: 'Nicolas', value: 'Loading' },
   ];
 
-  reload() {
+  loadStatus() {
+    console.log('Caricato!');
+  }
+
+  reloadStatus() {
     console.log('Ricaricato!');
   }
 

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutes } from './app.routes';
 import { RouterModule } from '@angular/router';
-import { CheckPeopleComponent } from './components/check-people/check-people.component';
+import { CheckStatusComponent } from './components/check-status/check-status.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CountExpressComponent } from './components/count-express/count-express.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
@@ -17,7 +17,7 @@ import { HomeComponent } from './components/home/home.component';
     HomeComponent,
     ErrorPageComponent,
     CountExpressComponent,
-    CheckPeopleComponent
+    CheckStatusComponent
   ],
   imports: [
     BrowserModule,
