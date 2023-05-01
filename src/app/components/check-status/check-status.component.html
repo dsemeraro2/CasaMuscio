@@ -3,8 +3,11 @@
     <div class="flex flex-col w-full">
         <div class="flex flex-row w-full">
             <p class="flex flex-row w-full pl-6">Disponibilità persone:</p>
-            <button (click)="reloadStatus()" class="flex justify-end items-end px-2"><span
-                    class=reload>&#x21bb;</span></button>
+
+            <!-- Icona di caricamento -->
+            <button (click)="reloadStatus()" class="flex justify-end items-end px-2">
+                <span [ngClass]="loading ? 'icon-rotate' : ''">&#x21bb;</span>
+            </button>
         </div>
 
         <p class="border-b-2 border-white pb-2 w-full"></p>

@@ -32,6 +32,7 @@ export class CheckStatusComponent implements OnInit {
   ];
 
   loading: boolean = false;
+  
   loadStatus() {
     console.log('Caricato!');
   }
