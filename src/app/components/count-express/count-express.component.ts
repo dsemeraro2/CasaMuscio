@@ -31,12 +31,13 @@ export class CountExpressComponent implements OnInit {
     { id: 'Nicolas', value: 0 },
   ];
 
+  resetting: boolean = false;
+
   //Popolo i countExpress
   counterExpressInitialize() {
     this.countExpressService
       .getCountExpress()
       .subscribe((response: ICountExpress[]) => {
-        console.log('Repsonse', response);
         this.countExpress = response;
       });
   }
@@ -60,7 +61,13 @@ export class CountExpressComponent implements OnInit {
     console.log('Reset count!');
     for (const item of this.countExpress) {
       item.value = 0;
-      this.countExpressService.postCountExpress(item).subscribe();
+      this.countExpressService.postCountExpress(item).subscribe(() => {
+        this.resetting = true;
+
+        /*setTimeout(() => {
+          this.resetting = false;
+        }, 1000);*/
+      });
     }
   }
 }
