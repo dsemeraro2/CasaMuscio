@@ -3,15 +3,17 @@
     <div class="flex flex-col w-full">
         <div class="flex flex-row w-full">
 
-            <p class="flex items-start w-full pl-6">Disponibilità persone:</p>
+            <div class="flex flex-row w-full">
+                <p class="w-full pl-6" style="white-space: nowrap;">Disponibilità persone:</p>
 
-            <div class="flex flex-row justify-end items-end pr-2 w-full">
-                <!-- Icona di caricamento -->
-                <button (click)="reloadStatus()" class="flex">
-                    <span [ngClass]="loading ? 'icon-rotate' : ''">&#x21bb;</span>
-                </button>
-            </div>      
-            
+                <div div class="flex flex-row flex-nowrap justify-end items-end pr-2 w-full text-sm">
+                    <!-- Icona di caricamento -->
+                    <button (click)="reloadStatus()" class="flex">
+                        <span [ngClass]="loading ? 'icon-rotate' : ''">&#x21bb;</span>
+                    </button>
+                </div>
+            </div>
+
         </div>
 
         <p class="border-b-2 border-white pb-2 w-full"></p>
