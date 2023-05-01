@@ -66,7 +66,7 @@ export class CountExpressComponent implements OnInit {
 
         setTimeout(() => {
           this.resetting = false;
-        }, 5000);
+        }, 1000);
       });
     }
   }
