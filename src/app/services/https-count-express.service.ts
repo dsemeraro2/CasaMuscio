@@ -12,14 +12,14 @@ export interface ICountExpress {
 export class HttpsCountExpressService {
   constructor(private httpClient: HttpClient) {}
 
-  path = 'http://192.168.1.15:3000/';
+  path = 'http://192.168.1.3:3000/';
 
   getCountExpress() {
     return this.httpClient.get<ICountExpress[]>(this.path + 'countExpress');
   }
 
   postCountExpress(item: ICountExpress) {
-    return this.httpClient.post<ICountExpress>(this.path + 'countExpress/' + item.id + '/' + item.value, null);
+    return this.httpClient.post<ICountExpress>(this.path + 'countExpress', item);
   }
 
 }
