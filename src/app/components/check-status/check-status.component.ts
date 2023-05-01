@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 interface ICheckStatus{
   id: string;
-  value: string;
+  value: string; //Loading, Online, Offline
 }
 @Component({
   selector: 'app-check-status',
