@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-interface ICheckStatus{
+interface ICheckStatus {
   id: string;
   value: string; //Loading, Online, Offline
 }
@@ -10,11 +10,10 @@ interface ICheckStatus{
   styleUrls: ['./check-status.component.css'],
 })
 export class CheckStatusComponent implements OnInit {
-  
   ngOnInit() {
-    this.loadStatus();    
+    this.loadStatus();
   }
-  
+
   //Contatori
   checkStatus: ICheckStatus[] = [
     {
@@ -32,12 +31,16 @@ export class CheckStatusComponent implements OnInit {
     { id: 'Nicolas', value: 'Loading' },
   ];
 
+  loading: boolean = false;
   loadStatus() {
     console.log('Caricato!');
   }
 
   reloadStatus() {
-    console.log('Ricaricato!');
-  }
+    this.loading = true;
 
+    setTimeout(() => {
+      this.loading = false;
+    }, 3000);
+  }
 }
