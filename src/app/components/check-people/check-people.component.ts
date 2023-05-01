@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+interface ICheckStatus{
+  id: string;
+  value: string;
+}
 @Component({
   selector: 'app-check-people',
   templateUrl: './check-people.component.html',
@@ -11,17 +15,25 @@ export class CheckPeopleComponent implements OnInit {
     this.reload();    
   }
   
-  statusAlessandro = 'Loading';
-  statusCarmine = 'Loading';
-  statusDaniele = 'Loading';
-  statusNicolas = 'Loading';
+  //Contatori
+  checkStatus: ICheckStatus[] = [
+    {
+      id: 'Alessandro',
+      value: 'Online',
+    },
+    {
+      id: 'Carmine',
+      value: 'Offline',
+    },
+    {
+      id: 'Daniele',
+      value: 'Loading',
+    },
+    { id: 'Nicolas', value: 'Loading' },
+  ];
 
   reload() {
     console.log('Ricaricato!');
-    this.statusAlessandro = 'Offline';
-    this.statusCarmine = 'Offline';
-    this.statusDaniele = 'Online';
-    this.statusNicolas = 'Online';
   }
 
 }

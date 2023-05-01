@@ -3,53 +3,26 @@
     <div class="flex flex-col w-full">
         <div class="flex flex-row w-full">
             <p class="flex flex-row w-full pl-6">Disponibilità persone:</p>
-            <button (click)="reload()" class="flex justify-end items-end px-2"><span class=reload>&#x21bb;</span></button>
+            <button (click)="reload()" class="flex justify-end items-end px-2"><span
+                    class=reload>&#x21bb;</span></button>
         </div>
 
         <p class="border-b-2 border-white pb-2 w-full"></p>
     </div>
 
-    <div class="flex py-4 pt-6 w-full">
-        <div class="flex w-1/2 pl-6">
-            <p>Alessandro:</p>
-        </div>
+    <div class="flex flex-col py-4 pt-6 w-full">
 
-        <div class="flex justify-center w-1/2">
-            <div *ngIf="statusAlessandro === 'Loading'">Loading</div>
-            <p *ngIf="statusAlessandro != 'Loading'" [ngClass]="statusAlessandro === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusAlessandro}}</p>
-        </div>
+        <div *ngFor="let item of checkStatus" class="flex py-4 w-full">
+            <div class="flex w-1/2 pl-6">
+                <p>{{item.id}}:</p>
+            </div>
 
-    </div>
-    <div class="flex py-4 w-full">
-        <div class="flex w-1/2 pl-6">
-            <p>Carmine:</p>
-        </div>
-
-        <div class="flex justify-center w-1/2">
-            <div *ngIf="statusCarmine === 'Loading'">Loading</div>
-            <p *ngIf="statusCarmine != 'Loading'" [ngClass]="statusCarmine === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusCarmine}}</p>
-        </div>
-
-    </div>
-    <div class="flex py-4 w-full">
-        <div class="flex w-1/2 pl-6">
-            <p>Daniele:</p>
-        </div>
-
-        <div class="flex justify-center w-1/2">
-            <div *ngIf="statusDaniele === 'Loading'">Loading</div>
-            <p *ngIf="statusDaniele != 'Loading'" [ngClass]="statusDaniele === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusDaniele}}</p>
-        </div>
-
-    </div>
-    <div class="flex py-4 w-full">
-        <div class="flex w-1/2 pl-6">
-            <p>Nicolas:</p>
-        </div>
-
-        <div class="flex justify-center w-1/2">
-            
-            <div *ngIf="statusNicolas === 'Loading'">Loading</div>
-            <p *ngIf="statusNicolas != 'Loading'" [ngClass]="statusNicolas === 'Online' ? 'text-green-600' : 'text-red-600'">{{statusNicolas}}</p>
+            <div class="flex justify-center w-1/2">
+                <div *ngIf="item.value === 'Loading'">Loading...</div>
+                <p *ngIf="item.value != 'Loading'"
+                    [ngClass]="item.value === 'Online' ? 'text-green-600' : 'text-red-600'">{{item.value}}</p>
+            </div>
         </div>
     </div>
+
+</div>
