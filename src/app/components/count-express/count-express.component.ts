@@ -64,9 +64,9 @@ export class CountExpressComponent implements OnInit {
       this.countExpressService.postCountExpress(item).subscribe(() => {
         this.resetting = true;
 
-        /*setTimeout(() => {
+        setTimeout(() => {
           this.resetting = false;
-        }, 1000);*/
+        }, 5000);
       });
     }
   }

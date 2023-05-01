@@ -3,12 +3,15 @@
     <div class="flex flex-col w-full">
         <div class="flex flex-row w-full">
 
-            <p class="flex items-start w-full pl-6">Disponibilità persone:</p>
+            <p class="flex justify-start w-full pl-6">Disponibilità persone:</p>
 
-            <!-- Icona di caricamento -->
-            <button (click)="reloadStatus()" class="flex justify-end items-end px-2">
-                <span [ngClass]="loading ? 'icon-rotate' : ''">&#x21bb;</span>
-            </button>
+            <div class="flex flex-row justify-end items-end pr-2 w-full text-xs">
+                <!-- Icona di caricamento -->
+                <button (click)="reloadStatus()" class="flex">
+                    <span [ngClass]="loading ? 'icon-rotate' : ''">&#x21bb;</span>
+                </button>
+            </div>      
+            
         </div>
 
         <p class="border-b-2 border-white pb-2 w-full"></p>
