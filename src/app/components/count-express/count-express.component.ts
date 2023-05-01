@@ -9,7 +9,7 @@ import { ICountExpress } from 'src/app/services/https-count-express.service';
 })
 export class CountExpressComponent implements OnInit {
   ngOnInit() {
-    this.counterExpressInitialize();
+    this.loadCounterExpress();
   }
 
   constructor(private countExpressService: ServiceCountExpressService) {}
@@ -34,7 +34,7 @@ export class CountExpressComponent implements OnInit {
   resetting: boolean = false;
 
   //Popolo i countExpress
-  counterExpressInitialize() {
+  loadCounterExpress() {
     this.countExpressService
       .getCountExpress()
       .subscribe((response: ICountExpress[]) => {
@@ -57,7 +57,7 @@ export class CountExpressComponent implements OnInit {
   }
 
   //Resetto count
-  resetCounter() {
+  resetCounterExpress() {
     console.log('Reset count!');
     for (const item of this.countExpress) {
       item.value = 0;
