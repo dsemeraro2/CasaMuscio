@@ -52,6 +52,6 @@ export class CheckStatusComponent implements OnInit {
     setTimeout(() => {
       this.loadStatus();
       this.loading = false;
-    }, 2500);
+    }, 2000);
   }
 }
