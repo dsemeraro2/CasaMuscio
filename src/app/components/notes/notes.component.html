@@ -1,0 +1,32 @@
+<div class="flex flex-col text-lg">
+
+    <div class="flex flex-col w-full">
+        <div class="flex flex-row w-full">
+
+            <div class="flex flex-row w-full">
+                <p class="flex-nowrap w-full pl-6">Note:</p>
+
+                <div class="flex flex-row flex-nowrap justify-end items-end pr-2 w-full text-sm">
+                    <!-- Mostra l'icona di reset 
+                    <div *ngIf="resetting; else reset">
+                        <button>Resettati!</button>
+                    </div>
+
+                    <ng-template #reset>
+                        <button (click)="resetCounterExpress()">Reset count</button>
+                    </ng-template>-->
+                </div>
+            </div>
+        </div>
+
+        <p class="border-b-2 border-white pb-2 w-full"></p>
+    </div>
+
+    <div class="flex flex-col py-4 w-full">
+
+        <!-- Textbox -->
+        <textarea [(ngModel)]="myTextareaContent" class="w-full h-[200px] md:h-[316px] border-2 border-white resize-none text-black"></textarea>
+
+    </div>
+
+</div>

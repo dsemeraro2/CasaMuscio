@@ -8,7 +8,7 @@ import { ICheckStatus } from 'src/app/services/https-check-status.service';
   styleUrls: ['./check-status.component.css'],
 })
 export class CheckStatusComponent implements OnInit {
-  ngOnInit() {
+  ngOnInit(): void {
     this.loadStatus();
   }
 

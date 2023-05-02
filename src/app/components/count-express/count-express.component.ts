@@ -8,7 +8,7 @@ import { ICountExpress } from 'src/app/services/https-count-express.service';
   styleUrls: ['./count-express.component.css'],
 })
 export class CountExpressComponent implements OnInit {
-  ngOnInit() {
+  ngOnInit(): void {
     this.loadCounterExpress();
   }
 
