@@ -14,7 +14,7 @@ export class HttpsCountExpressService {
 
   path = 'http://192.168.1.3:3000/';
 
-  getCountExpress() {
+  getCountExpress(): Observable<ICountExpress[]> {
     return this.httpClient.get<ICountExpress[]>(this.path + 'countExpress');
   }
 

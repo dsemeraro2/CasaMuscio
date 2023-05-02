@@ -3,6 +3,9 @@ import { HttpClient} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
+export interface INotes {
+  text: string;
+}
 
 @Injectable({ providedIn: 'root' })
 export class HttpsNotesService {
@@ -10,11 +13,11 @@ export class HttpsNotesService {
 
   path = 'http://192.168.1.3:3000/';
 
-  getNotes() {
-    return this.httpClient.get(this.path + 'notes', { responseType: 'text' });
+  getNotes(): Observable<INotes> {
+    return this.httpClient.get<INotes>(this.path + 'notes');
   }
 
-  postNotes(item: string) {
+  postNotes(item: INotes) {
     return this.httpClient.post(this.path + 'notes', item);
   }
 

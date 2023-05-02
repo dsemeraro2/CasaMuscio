@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesService } from './notes.service';
+import { INotes } from 'src/app/services/https-note.service';
 
 @Component({
   selector: 'app-notes',
@@ -13,11 +14,22 @@ export class NotesComponent implements OnInit {
     this.loadNotes();
   }
 
-  textareaContent: string = '';
+  textareaContent: INotes = {
+    text: '',
+  };
+  saving: boolean = false;
 
   loadNotes() {
     this.notesService.getNotes().subscribe((response) => {
       this.textareaContent = response;
     });
+  }
+
+  saveNotes() {
+    this.saving = true;
+    this.notesService.postNotes(this.textareaContent).subscribe();
+    setTimeout(() => {
+      this.saving = false;
+    }, 1000);
   }
 }
