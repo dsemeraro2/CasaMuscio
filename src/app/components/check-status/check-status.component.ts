@@ -40,7 +40,7 @@ export class CheckStatusComponent implements OnInit {
         .subscribe((response: ICheckStatus[]) => {
           this.checkStatus = response;
         });
-    }, 1500);
+    }, 1000);
   }
 
   reloadStatus() {
@@ -52,6 +52,6 @@ export class CheckStatusComponent implements OnInit {
     setTimeout(() => {
       this.loadStatus();
       this.loading = false;
-    }, 1000);
+    }, 1500);
   }
 }
