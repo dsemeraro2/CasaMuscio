@@ -40,7 +40,7 @@ export class CheckStatusComponent implements OnInit {
         .subscribe((response: ICheckStatus[]) => {
           this.checkStatus = response;
         });
-    }, 1000);
+    }, 2000);
   }
 
   reloadStatus() {
