@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceCheckStatusService } from './service-check-status.service';
+import { ServiceCheckStatusService } from './check-status.service';
 import { ICheckStatus } from 'src/app/services/https-check-status.service';
 
 @Component({
