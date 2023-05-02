@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceCheckStatusService } from './check-status.service';
+import { CheckStatusService } from './check-status.service';
 import { ICheckStatus } from 'src/app/services/https-check-status.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class CheckStatusComponent implements OnInit {
     this.loadStatus();
   }
 
-  constructor(private checkStatusService: ServiceCheckStatusService) {}
+  constructor(private checkStatusService: CheckStatusService) {}
 
   //Contatori
   checkStatus: ICheckStatus[] = [

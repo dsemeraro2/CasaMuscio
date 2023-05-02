@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpsCheckStatusService } from 'src/app/services/https-check-status.service';
 
 @Injectable({ providedIn: 'root' })
-export class ServiceCheckStatusService {
+export class CheckStatusService {
   constructor(private checkStatusService: HttpsCheckStatusService) {}
 
   getCheckStatus() {
