@@ -10,6 +10,8 @@ import { CountExpressComponent } from './components/count-express/count-express.
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { AppComponent } from './components/app.component';
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule } from '@angular/forms';
+import { NotesComponent } from './components/notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { HomeComponent } from './components/home/home.component';
     HomeComponent,
     ErrorPageComponent,
     CountExpressComponent,
-    CheckStatusComponent
+    CheckStatusComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

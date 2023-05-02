@@ -10,6 +10,6 @@ export class NotesComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  myTextareaContent: string = "";
+  textareaContent: string = "";
 
 }
