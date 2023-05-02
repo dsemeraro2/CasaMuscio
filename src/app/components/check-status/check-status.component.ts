@@ -32,21 +32,26 @@ export class CheckStatusComponent implements OnInit {
   ];
 
   loading: boolean = false;
-  
+
   loadStatus() {
-    this.checkStatusService
-      .getCheckStatus()
-      .subscribe((response: ICheckStatus[]) => {
-        this.checkStatus = response;
-      });
+    setTimeout(() => {
+      this.checkStatusService
+        .getCheckStatus()
+        .subscribe((response: ICheckStatus[]) => {
+          this.checkStatus = response;
+        });
+    }, 1000);
   }
 
   reloadStatus() {
     this.loading = true;
-    this.loadStatus();
+    for (let i = 0; i < this.checkStatus.length; i++) {
+      this.checkStatus[i].value = 'Loading';
+    }
 
     setTimeout(() => {
+      this.loadStatus();
       this.loading = false;
-    }, 3000);
+    }, 2500);
   }
 }
