@@ -14,4 +14,8 @@ export class HttpsNotesService {
     return this.httpClient.get(this.path + 'notes', { responseType: 'text' });
   }
 
+  postNotes(item: string) {
+    return this.httpClient.post(this.path + 'notes', item);
+  }
+
 }

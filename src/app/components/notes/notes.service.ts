@@ -9,4 +9,8 @@ export class NotesService {
     return this.notesService.getNotes();
   }
 
+  postNotes(item: string) {
+    return this.notesService.postNotes(item);
+  }
+
 }
