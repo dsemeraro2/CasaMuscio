@@ -18,6 +18,7 @@ export class NotesComponent implements OnInit {
     text: '',
   };
   saving: boolean = false;
+  loading: boolean = false;
 
   loadNotes() {
     this.notesService.getNotes().subscribe((response) => {
@@ -32,4 +33,14 @@ export class NotesComponent implements OnInit {
       this.saving = false;
     }, 1000);
   }
+
+  reloadNotes() {
+    this.loading = true;
+
+    setTimeout(() => {
+      this.loadNotes();
+      this.loading = false;
+    }, 1500);
+  }
+
 }
