@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckStatusService } from './check-status.service';
-import { ICheckStatus } from 'src/app/services/https-services/https-check-status.service';
+import { ICheckStatus } from 'src/app/models/check-status';
 
 @Component({
   selector: 'app-check-status',

@@ -2,11 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-
-export interface ICountExpress {
-  id: string;
-  value: number;
-}
+import { ICountExpress } from 'src/app/models/count-express';
 
 @Injectable({ providedIn: 'root' })
 export class HttpsCountExpressService {

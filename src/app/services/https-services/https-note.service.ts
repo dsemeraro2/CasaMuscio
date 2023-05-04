@@ -2,10 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-
-export interface INotes {
-  text: string;
-}
+import { INotes } from 'src/app/models/notes';
 
 @Injectable({ providedIn: 'root' })
 export class HttpsNotesService {

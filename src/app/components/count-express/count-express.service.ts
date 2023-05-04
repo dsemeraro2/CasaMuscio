@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpsCountExpressService, ICountExpress} from 'src/app/services/https-services/https-count-express.service';
+import { ICountExpress } from 'src/app/models/count-express';
+import { HttpsCountExpressService} from 'src/app/services/https-services/https-count-express.service';
 
 @Injectable({ providedIn: 'root' })
 export class ServiceCountExpressService {
