@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpsCheckStatusService } from 'src/app/services/https-check-status.service';
+import { HttpsCheckStatusService } from 'src/app/services/https-services/https-check-status.service';
 
 @Injectable({ providedIn: 'root' })
 export class CheckStatusService {

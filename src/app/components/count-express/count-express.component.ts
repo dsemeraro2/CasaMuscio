@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceCountExpressService } from './count-express.service';
-import { ICountExpress } from 'src/app/services/https-count-express.service';
+import { ICountExpress } from 'src/app/services/https-services/https-count-express.service';
 
 @Component({
   selector: 'app-count-express',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpsNotesService, INotes } from 'src/app/services/https-note.service';
+import { HttpsNotesService, INotes } from 'src/app/services/https-services/https-note.service';
 
 @Injectable({providedIn: 'root'})
 export class NotesService {
