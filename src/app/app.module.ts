@@ -12,6 +12,7 @@ import { AppComponent } from './components/app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { NotesComponent } from './components/notes/notes.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NotesComponent } from './components/notes/notes.component';
     ErrorPageComponent,
     CountExpressComponent,
     CheckStatusComponent,
-    NotesComponent
+    NotesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
