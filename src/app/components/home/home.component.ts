@@ -9,7 +9,7 @@ import { AuthenticationService } from 'src/app/services/auth-services/authentica
 })
 export class HomeComponent {
   constructor(private authService: AuthenticationService, private router: Router) { }
-
+  
   public logout() {
     this.authService.logout();
     this.router.navigate(['login']);
