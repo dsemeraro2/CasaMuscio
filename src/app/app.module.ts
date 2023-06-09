@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { NotesComponent } from './components/notes/notes.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeworksComponent } from './components/homeworks/homeworks.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { HomeworksComponent } from './components/homeworks/homeworks.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
