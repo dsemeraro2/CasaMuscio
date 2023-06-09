@@ -30,4 +30,49 @@
         </div>
     </div>
 
+    <!-- Modale -->
+    <div class="modal" [ngClass]="{'open': isModalOpen}">
+        <div class="modal-content text-white bg-white dark:bg-slate-800 dark:text-white">
+            
+            <!-- Modal head -->
+            <div class="flex flex-row w-full items-center">
+                <p class="w-full pl-6" style="white-space: nowrap;">Modifica dei turni</p>
+
+                <div div class="flex flex-row flex-nowrap justify-end items-end pr-2 w-full">
+                    <!-- Icona di chiusura -->
+                    <button (click)="closeModal()">X</button>
+                </div>
+            </div>
+
+            <p class="border-b-2 border-white pb-2 w-full"></p>
+
+            <!-- Modal body -->
+            <div *ngFor="let item of assignedHomeworks" class="flex py-6 w-full">
+                <div class="flex w-1/2 pl-6">
+                    <p>{{item.id}}:</p>
+                </div>
+    
+                <div class="flex justify-center w-1/2">
+                    <div *ngIf="item.value === 'Loading'">Loading...</div>
+                    <p *ngIf="item.value != 'Loading'">{{item.value}}</p>
+                </div>
+                
+            </div>
+
+            <div class="flex flex-row justify-end items-end pt-2 pr-2 w-full">
+            
+                <!-- Mostra l'icona di salvataggio -->
+                <div *ngIf="saving; else save">
+                    <button>Salvato!</button>
+                </div>
+
+                <ng-template #save>
+                    <button (click)="saveHomeworks()">Salva</button>
+                </ng-template>
+
+            </div>
+
+        </div>
+    </div>
+
 </div>

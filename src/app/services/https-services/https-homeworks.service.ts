@@ -13,4 +13,8 @@ export class HttpsHomeworksService {
     return this.httpClient.get<IHomeworks[]>(this.path + 'homeworks');
   }
 
+  postHomeworks(item: IHomeworks[]) {
+    return this.httpClient.post<IHomeworks[]>(this.path + 'homeworks', item);
+  }
+
 }

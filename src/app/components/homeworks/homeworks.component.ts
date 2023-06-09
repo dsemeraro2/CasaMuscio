@@ -6,7 +6,7 @@ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-homeworks',
   templateUrl: './homeworks.component.html',
-  styleUrls: ['./homeworks.component.css']
+  styleUrls: ['./homeworks.component.css'],
 })
 export class HomeworksComponent implements OnInit {
   ngOnInit(): void {
@@ -14,9 +14,12 @@ export class HomeworksComponent implements OnInit {
     this.month = this.getMonth();
   }
 
-  constructor(private homeworksService: HomeworksService, private datePipe: DatePipe) {}
+  constructor(
+    private homeworksService: HomeworksService,
+    private datePipe: DatePipe
+  ) {}
 
-  homeworks: string[] = ["Cucina", "Spazzare", "Pavimento", "Bagno"];
+  homeworks: string[] = ['Cucina', 'Spazzare', 'Pavimento', 'Bagno'];
 
   assignedHomeworks: IHomeworks[] = [
     {
@@ -34,7 +37,7 @@ export class HomeworksComponent implements OnInit {
     { id: 'Nicolas', value: 'Loading' },
   ];
 
-  month: string = "";
+  month: string = '';
 
   loadHomeworks() {
     setTimeout(() => {
@@ -51,8 +54,24 @@ export class HomeworksComponent implements OnInit {
     return this.datePipe.transform(currentDate, 'MMMM') ?? 'N/A'; // Ottieni il nome completo del mese
   }
 
-  changeHomeworks(){
-   console.log("Apertura modale cambio", this.homeworks);
+  isModalOpen = false;
+  saving: boolean = false;
+
+  changeHomeworks() {
+    this.isModalOpen = true;
+    console.log('Apertura modale cambio', this.homeworks);
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
+
+  saveHomeworks() {
+    this.saving = true;
+    this.homeworksService.postHomeworks(this.assignedHomeworks).subscribe();
+    setTimeout(() => {
+      this.saving = false;
+    }, 1000);
   }
 
 }
