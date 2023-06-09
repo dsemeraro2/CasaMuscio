@@ -5,7 +5,7 @@ import { ICheckStatus } from 'src/app/models/check-status';
 @Component({
   selector: 'app-check-status',
   templateUrl: './check-status.component.html',
-  styleUrls: ['./check-status.component.css'],
+  styleUrls: ['./check-status.component.css']
 })
 export class CheckStatusComponent implements OnInit {
   ngOnInit(): void {

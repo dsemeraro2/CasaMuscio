@@ -4,8 +4,7 @@ import { ICountExpress } from 'src/app/models/count-express';
 
 @Component({
   selector: 'app-count-express',
-  templateUrl: './count-express.component.html',
-  styleUrls: ['./count-express.component.css'],
+  templateUrl: './count-express.component.html'
 })
 export class CountExpressComponent implements OnInit {
   ngOnInit(): void {
