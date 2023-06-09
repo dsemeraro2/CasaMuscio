@@ -10,9 +10,19 @@
     </div>
 
     <p class="border-b-2 border-white pb-2 w-full"></p>
-</div>
 
-<div class="flex flex-col py-4 px-6 w-full">
+    <div class="flex flex-col py-4 w-full">
 
+        <div *ngFor="let item of homeworks" class="flex py-4 w-full">
+            <div class="flex w-1/2 pl-6">
+                <p>{{item.id}}:</p>
+            </div>
+
+            <div class="flex justify-center w-1/2">
+                <div *ngIf="item.value === 'Loading'">Loading...</div>
+                <p *ngIf="item.value != 'Loading'">{{item.value}}</p>
+            </div>
+        </div>
+    </div>
 
 </div>
