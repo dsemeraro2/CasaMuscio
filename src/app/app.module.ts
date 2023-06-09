@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { NotesComponent } from './components/notes/notes.component';
 import { LoginComponent } from './components/login/login.component';
+import { HomeworksComponent } from './components/homeworks/homeworks.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './components/login/login.component';
     CountExpressComponent,
     CheckStatusComponent,
     NotesComponent,
-    LoginComponent
+    LoginComponent,
+    HomeworksComponent
   ],
   imports: [
     BrowserModule,
