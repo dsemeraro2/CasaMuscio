@@ -16,7 +16,9 @@ export class HomeworksComponent implements OnInit {
 
   constructor(private homeworksService: HomeworksService, private datePipe: DatePipe) {}
 
-  homeworks: IHomeworks[] = [
+  homeworks: string[] = ["Cucina", "Spazzare", "Pavimento", "Bagno"];
+
+  assignedHomeworks: IHomeworks[] = [
     {
       id: 'Alessandro',
       value: 'Loading',
@@ -39,7 +41,7 @@ export class HomeworksComponent implements OnInit {
       this.homeworksService
         .getHomeworks()
         .subscribe((response: IHomeworks[]) => {
-          this.homeworks = response;
+          this.assignedHomeworks = response;
         });
     }, 1000);
   }
@@ -50,7 +52,7 @@ export class HomeworksComponent implements OnInit {
   }
 
   changeHomeworks(){
-   console.log("Apertura modale cambio");
+   console.log("Apertura modale cambio", this.homeworks);
   }
 
 }
