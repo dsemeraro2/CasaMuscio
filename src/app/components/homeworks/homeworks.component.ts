@@ -19,7 +19,7 @@ export class HomeworksComponent implements OnInit {
     private datePipe: DatePipe
   ) {}
 
-  homeworks: string[] = ['Cucina', 'Spazzare', 'Pavimento', 'Bagno'];
+  homeworks: string[] = ['Bagno', 'Cucina', 'Spazzare', 'Pavimento'];
 
   assignedHomeworks: IHomeworks[] = [
     {

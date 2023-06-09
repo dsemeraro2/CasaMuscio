@@ -53,8 +53,10 @@
                 </div>
     
                 <div class="flex justify-center w-1/2">
-                    <div *ngIf="item.value === 'Loading'">Loading...</div>
-                    <p *ngIf="item.value != 'Loading'">{{item.value}}</p>
+                    <div class="bg-white dark:bg-slate-800 dark:text-white" *ngIf="item.value === 'Loading'">Loading...</div>
+                    <select class="bg-white dark:bg-slate-800 dark:text-white" *ngIf="item.value !== 'Loading'" [(ngModel)]="item.value">
+                      <option class="bg-white dark:bg-slate-800 dark:text-white" *ngFor="let homework of homeworks" [value]="homework">{{homework}}</option>
+                    </select>
                 </div>
                 
             </div>
