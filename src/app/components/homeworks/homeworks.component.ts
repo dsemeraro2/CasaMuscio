@@ -48,4 +48,9 @@ export class HomeworksComponent implements OnInit {
     const currentDate = new Date(); // Ottieni la data corrente
     return this.datePipe.transform(currentDate, 'MMMM') ?? 'N/A'; // Ottieni il nome completo del mese
   }
+
+  changeHomeworks(){
+   console.log("Apertura modale cambio");
+  }
+
 }
