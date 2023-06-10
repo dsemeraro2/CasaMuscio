@@ -59,7 +59,6 @@ export class HomeworksComponent implements OnInit {
 
   changeHomeworks() {
     this.isModalOpen = true;
-    console.log('Apertura modale cambio', this.homeworks);
   }
 
   closeModal() {
