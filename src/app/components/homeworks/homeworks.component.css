@@ -8,11 +8,7 @@
   .modal.open {
     @apply flex items-center content-center;
   }
-  
-  .modal-overlay {
-    @apply absolute top-0 left-0 w-full h-full;
-  }
-  
+
   .modal-content {
     @apply text-black dark:text-white;
     @apply border-2;
