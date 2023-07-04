@@ -5,8 +5,7 @@ import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-homeworks',
-  templateUrl: './homeworks.component.html',
-  styleUrls: ['./homeworks.component.css'],
+  templateUrl: './homeworks.component.html'
 })
 export class HomeworksComponent implements OnInit {
   ngOnInit(): void {
@@ -52,25 +51,6 @@ export class HomeworksComponent implements OnInit {
   getMonth(): string {
     const currentDate = new Date(); // Ottieni la data corrente
     return this.datePipe.transform(currentDate, 'MMMM') ?? 'N/A'; // Ottieni il nome completo del mese
-  }
-
-  isModalOpen = false;
-  saving: boolean = false;
-
-  changeHomeworks() {
-    this.isModalOpen = true;
-  }
-
-  closeModal() {
-    this.isModalOpen = false;
-  }
-
-  saveHomeworks() {
-    this.saving = true;
-    this.homeworksService.postHomeworks(this.assignedHomeworks).subscribe();
-    setTimeout(() => {
-      this.saving = false;
-    }, 1000);
   }
 
 }
